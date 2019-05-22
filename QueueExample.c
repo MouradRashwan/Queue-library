@@ -16,7 +16,7 @@ typedef struct Object
 
 int main(void)
 {
-    printf("Queue Starting ...\n");
+    printf("Queue Starting ...\n\n");
 
     int32_t ii;
     Queue_t tQueue;
