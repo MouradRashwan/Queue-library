@@ -1,1 +1,1 @@
-# QUEUE generic data structure library.
+# QUEUE generic data structure library in C.
