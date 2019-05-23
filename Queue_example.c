@@ -59,6 +59,10 @@ int main(void)
         printf("(%u|%u) ", tObject.i32Val1, tObject.i32Val2);
     }
     printf("\n\n");
+    
+#if(QUEUE_STATIC_ALLOCATION == 0)
+    Queue_deallocateDynamic(&tQueue);
+#endif
 
     return 0;
 }
