@@ -26,6 +26,7 @@ int main(void)
     if(Queue_allocateDynamic(&tQueue, QUEUE_LENGTH, sizeof(Object_t)) == false)
     {
         printf("<<ERROR>> Heap Memory is Full");
+        return 0;
     }
 #else
     static Object_t atObject[QUEUE_LENGTH];
@@ -59,7 +60,7 @@ int main(void)
         printf("(%u|%u) ", tObject.i32Val1, tObject.i32Val2);
     }
     printf("\n\n");
-    
+
 #if(QUEUE_STATIC_ALLOCATION == 0)
     Queue_deallocateDynamic(&tQueue);
 #endif
