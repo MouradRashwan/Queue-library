@@ -17,6 +17,8 @@ void Queue_allocateStatic(Queue_t *ptQueue, void *pvQueueArray, int32_t i32Queue
 
 bool Queue_allocateDynamic(Queue_t *ptQueue, int32_t i32QueueLen, int32_t i32ElementSize);
 
+bool Queue_reallocateDynamic(Queue_t *ptQueue, int32_t i32NewQueueLen);
+
 void Queue_deallocateDynamic(Queue_t *ptQueue);
 
 bool Queue_isEmpty(Queue_t *ptQueue);

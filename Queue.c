@@ -34,6 +34,24 @@ bool Queue_allocateDynamic(Queue_t *ptQueue, int32_t i32QueueLen, int32_t i32Ele
     }
 }
 
+bool Queue_reallocateDynamic(Queue_t *ptQueue, int32_t i32NewQueueLen)
+{
+    void *pvData;
+
+    pvData = (void *)realloc(ptQueue->pvArray, i32NewQueueLen * ptQueue->i32ElementSize);
+
+    if(pvData == NULL)
+    {
+        return false;
+    }
+    else
+    {
+        ptQueue->pvArray = pvData;
+        ptQueue->i32QueueLen = i32NewQueueLen;
+        return true;
+    }
+}
+
 void Queue_deallocateDynamic(Queue_t *ptQueue)
 {
     free(ptQueue->pvArray);
